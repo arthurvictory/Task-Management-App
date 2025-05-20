@@ -7,6 +7,8 @@ import ProtectedPage from './components/ProtectedPage'
 import { useAuth0 } from '@auth0/auth0-react'
 import ProfilePage from './components/ProfilePage'
 import AuthenticationGuard from './Auth0/AuthenticationGuard'
+import { TaskProvider } from './context/TaskContext'
+import TaskDashboard from './components/TaskDashboard'
 
 const App: React.FC = () => {
 
@@ -15,12 +17,16 @@ const App: React.FC = () => {
   if(isLoading) return (<div>Loading...</div>)
 
     return (
+      <TaskProvider>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/profile' element={<AuthenticationGuard component={ProfilePage} />} />
         <Route path='/protected' element={<AuthenticationGuard component={ProtectedPage} />} />
         <Route path='callback' element={<CallbackPage />} />
+        <Route path='/dashboard' element={<TaskDashboard />} />
       </Routes>
+      </TaskProvider>
+      
     )
 };
 
