@@ -7,11 +7,12 @@ const NavBar: React.FC = () => {
     return (
         <Navbar>
             <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/">Home |</Nav.Link>
                 {isAuthenticated &&
                 <>
-                    <Nav.Link href="/profile">Profile |</Nav.Link>
-                    <Nav.Link href="/protected"> Protected</Nav.Link>
+                    <Nav.Link href="/profile"> Profile |</Nav.Link>
+                    <Nav.Link href="/protected"> Protected |</Nav.Link>
+                    <Nav.Link href='/dashboard'> Task Dashboard</Nav.Link>
                 </>
                 }
             </Nav>

@@ -19,7 +19,7 @@ const ProfilePage: React.FC = () => {
         <PageLayout>
             <h2>Profile Page</h2>
             <Col>
-                (user?.picture && <img src={user.picture} alt={user.name} />)
+                <img src={user.picture} alt={user.name} />
                 <h3>{user.name}</h3>
                 <div>
                     {

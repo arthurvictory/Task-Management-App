@@ -1,7 +1,7 @@
 // components/TaskDashboard.tsx
 import { useState, useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
-import { Task } from "../models/Task";
+import PageLayout from "./PageLayout";
 
 const TaskDashboard = () => {
   const taskContext = useContext(TaskContext);
@@ -19,9 +19,8 @@ const TaskDashboard = () => {
   };
 
   return (
+    <PageLayout>
     <div>
-      <h2>Task Dashboard</h2>
-
       <input
         type="text"
         value={newTaskTitle}
@@ -44,6 +43,7 @@ const TaskDashboard = () => {
         ))}
       </ul>
     </div>
+    </PageLayout>
   );
 };
 
